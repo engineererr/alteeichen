@@ -60,12 +60,14 @@ body, html {
       <i class="fa fa-bars"></i>
     </a>
     <a href="#home" class="w3-bar-item w3-button">HOME</a>
+    <a href="#news" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-user"></i>AKTUELLES</a>
     <a href="#about" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-user"></i>INFOS</a>
     <a href="#contact" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-envelope"></i> NEWSLETTER</a>
   </div>
 
   <!-- Navbar on small screens -->
   <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
+    <a href="#news" class="w3-bar-item w3-button" onclick="toggleFunction()">AKTUELLES</a>
     <a href="#about" class="w3-bar-item w3-button" onclick="toggleFunction()">INFOS</a>
     <a href="#contact" class="w3-bar-item w3-button" onclick="toggleFunction()">NEWSLETTER</a>
   </div>
@@ -77,6 +79,21 @@ body, html {
     <span class="w3-center w3-padding-large w3-black w3-xlarge w3-animate-opacity w3-hide-small">ALTEEICHENRETTEN</span>
     <span class="w3-center w3-padding-large w3-black w3-animate-opacity w3-hide-large w3-hide-medium">ALTEEICHENRETTEN</span>
   </div>
+</div>
+
+<!-- Container (News Section) -->
+<div class="w3-content w3-container w3-padding-64" id="news">
+  <h3 class="w3-center">NEWS</h3>
+  <p>Das erste Treffen bei den Eichen hat stattgefunden. Dabei konnten wir einige neue Fakten zusammentragen:</p>
+  <ul>
+      <li>Bauzone 2 Brieglipark wurde einzoniert und abgesteckt.</li>
+      <li>Es kam zu Einsprachen von Bewohnern in Bauzone 1 betreffend Schattenwurf des neu abgesteckten Gebäudes in Bauzone 2.</li>
+      <li>Daraufhin wurde entschieden die Krete, worauf die drei Bäume stehen, abzutragen. Dadurch ist das Gebäude in Bauzone 2 weniger hoch und wirf weniger Schatten.</li>
+      <li>Durch das Abtragen der Krete ist das Überleben der Bäume nicht gegeben.</li>
+      <li>Bäume mit einem Stammumfang bis zu 1.5m können versetzt werden (Quelle: <a href="http://www.baumboerse.ch/grossbaumverpflanzung" target="_blank">Baumbörse</a>). Die Bäume haben einen Stammumfang von ca. 4.5m.</li>
+      <li>Das Alter der Bäume ist noch nicht klar, sollte aber über 80 Jahren liegen.</li> 
+      <li>Zitat aus dem <a href="https://www.waschbaer.ch/" target="_blank">Waschbär-Newsletter</a>, der auf "Natural Capital Accounting" (<a href="https://en.wikipedia.org/wiki/Natural_capital_accounting" target="_blank">Wikipedia</a>) hinweist: "Eine 100-jährige Buceh hat demnach einen Wert von rund 271'000 Euro"</li>
+  </ul>
 </div>
 
 <!-- Container (About Section) -->
