@@ -1,126 +1,507 @@
 <!DOCTYPE html>
 <html>
-<title>alteeichenretten.org</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
-body, html {
-  height: 100%;
-  color: #777;
-  line-height: 1.8;
-}
+  <title>alteeichenretten.org</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+  />
+  <style>
+    body,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-family: "Lato", sans-serif;
+    }
+    body,
+    html {
+      height: 100%;
+      color: #777;
+      line-height: 1.8;
+    }
 
-/* Create a Parallax Effect */
-.bgimg-1, .bgimg-2, .bgimg-3 {
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
+    /* Create a Parallax Effect */
+    .bgimg-1,
+    .bgimg-2,
+    .bgimg-3 {
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
 
-/* First image (Logo. Full height) */
-.bgimg-1 {
-  background-image: url('./images/oak.jpg');
-  min-height: 100%;
-}
+    /* First image (Logo. Full height) */
+    .bgimg-1 {
+      background-image: url("./images/oak.jpg");
+      min-height: 100%;
+    }
 
-/* Second image (Portfolio) */
-.bgimg-2 {
-  background-image: url('./images/erstes_treffen.jpg');
-  min-height: 400px;
-}
+    /* Second image (Portfolio) */
+    .bgimg-2 {
+      background-image: url("./images/erstes_treffen.jpg");
+      min-height: 400px;
+    }
 
-/* Third image (Contact) */
-.bgimg-3 {
-  background-image: url("/images/parallax3.jpg");
-  min-height: 400px;
-}
+    /* Third image (Contact) */
+    .bgimg-3 {
+      background-image: url("./images/inventar.png");
+      min-height: 400px;
+    }
 
-.w3-wide {letter-spacing: 10px;}
-.w3-hover-opacity {cursor: pointer;}
+    .w3-wide {
+      letter-spacing: 10px;
+    }
+    .w3-hover-opacity {
+      cursor: pointer;
+    }
 
-/* Turn off parallax scrolling for tablets and phones */
-@media only screen and (max-device-width: 1600px) {
-  .bgimg-1, .bgimg-2, .bgimg-3 {
-    background-attachment: scroll;
-    min-height: 400px;
-  }
-}
-</style>
-<body>
+    /* Turn off parallax scrolling for tablets and phones */
+    @media only screen and (max-device-width: 1600px) {
+      .bgimg-1,
+      .bgimg-2,
+      .bgimg-3 {
+        background-attachment: scroll;
+        min-height: 400px;
+      }
+    }
+  </style>
+  <body>
+    <!-- Navbar (sit on top) -->
+    <div class="w3-top">
+      <div class="w3-bar" id="myNavbar">
+        <a
+          class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right"
+          href="javascript:void(0);"
+          onclick="toggleFunction()"
+          title="Toggle Navigation Menu"
+        >
+          <i class="fa fa-bars"></i>
+        </a>
+        <a href="#home" class="w3-bar-item w3-button">HOME</a>
+        <a href="#news" class="w3-bar-item w3-button w3-hide-small"
+          ><i class="fa fa-user"></i>AKTUELLES</a
+        >
+        <a href="#details" class="w3-bar-item w3-button w3-hide-small"
+          ><i class="fa fa-user"></i>DETAILS</a
+        >
+        <a href="#karte" class="w3-bar-item w3-button w3-hide-small"
+          ><i class="fa fa-user"></i>KARTE</a
+        >
+        <a href="#contact" class="w3-bar-item w3-button w3-hide-small"
+          ><i class="fa fa-envelope"></i> NEWSLETTER</a
+        >
+      </div>
 
-<!-- Navbar (sit on top) -->
-<div class="w3-top">
-  <div class="w3-bar" id="myNavbar">
-    <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
-      <i class="fa fa-bars"></i>
-    </a>
-    <a href="#home" class="w3-bar-item w3-button">HOME</a>
-    <a href="#news" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-user"></i>AKTUELLES</a>
-    <a href="#about" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-user"></i>INFOS</a>
-    <a href="#contact" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-envelope"></i> NEWSLETTER</a>
-  </div>
+      <!-- Navbar on small screens -->
+      <div
+        id="navDemo"
+        class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium"
+      >
+        <a href="#news" class="w3-bar-item w3-button" onclick="toggleFunction()"
+          >AKTUELLES</a
+        >
+        <a
+          href="#details"
+          class="w3-bar-item w3-button"
+          onclick="toggleFunction()"
+          >DETAILS</a
+        >
+        <a
+          href="#karte"
+          class="w3-bar-item w3-button"
+          onclick="toggleFunction()"
+          >KARTE</a
+        >
+        <a
+          href="#contact"
+          class="w3-bar-item w3-button"
+          onclick="toggleFunction()"
+          >NEWSLETTER</a
+        >
+      </div>
+    </div>
 
-  <!-- Navbar on small screens -->
-  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
-    <a href="#news" class="w3-bar-item w3-button" onclick="toggleFunction()">AKTUELLES</a>
-    <a href="#about" class="w3-bar-item w3-button" onclick="toggleFunction()">INFOS</a>
-    <a href="#contact" class="w3-bar-item w3-button" onclick="toggleFunction()">NEWSLETTER</a>
-  </div>
-</div>
+    <!-- First Parallax Image with Logo Text -->
+    <div class="bgimg-1 w3-display-container w3-opacity-min" id="home">
+      <div class="w3-display-middle" style="white-space: nowrap">
+        <span
+          class="w3-center w3-padding-large w3-black w3-xlarge w3-animate-opacity w3-hide-small"
+          >ALTEEICHENRETTEN</span
+        >
+        <span
+          class="w3-center w3-padding-large w3-black w3-animate-opacity w3-hide-large w3-hide-medium"
+          >ALTEEICHENRETTEN</span
+        >
+      </div>
+    </div>
 
-<!-- First Parallax Image with Logo Text -->
-<div class="bgimg-1 w3-display-container w3-opacity-min" id="home">
-  <div class="w3-display-middle" style="white-space:nowrap;">
-    <span class="w3-center w3-padding-large w3-black w3-xlarge w3-animate-opacity w3-hide-small">ALTEEICHENRETTEN</span>
-    <span class="w3-center w3-padding-large w3-black w3-animate-opacity w3-hide-large w3-hide-medium">ALTEEICHENRETTEN</span>
-  </div>
-</div>
+    <!-- Container (News Section) -->
+    <div class="w3-content w3-container w3-padding-64" id="news">
+      <h3 class="w3-center">AKTUELLES</h3>
+      <p>Das erste Treffen bei den Eichen hat stattgefunden.</p>
+      <img src="./images/erstes_treffen.jpg" style="max-width: 90%" />
+      <p>Dabei konnten wir einige neue Fakten zusammentragen:</p>
+      <ul>
+        <li>Bauzone 2 Brieglipark wurde einzoniert und abgesteckt.</li>
+        <li>
+          Es kam zu Einsprachen von Bewohnern in Bauzone 1 betreffend
+          Schattenwurf des neu abgesteckten Gebäudes in Bauzone 2.
+        </li>
+        <li>
+          Daraufhin wurde entschieden die Krete, worauf die drei Bäume stehen,
+          abzutragen. Dadurch ist das Gebäude in Bauzone 2 weniger hoch und
+          wirft weniger Schatten.
+        </li>
+        <li>
+          Durch das Abtragen der Krete ist das Überleben der Bäume nicht
+          gegeben.
+        </li>
+        <li>
+          Bäume mit einem Stammumfang bis zu 1.5m können versetzt werden
+          (Quelle:
+          <a
+            href="http://www.baumboerse.ch/grossbaumverpflanzung"
+            target="_blank"
+            >Baumbörse</a
+          >).
+        </li>
+        <li>
+          Die zwei grossen Bäume haben auf 1.5m Höhe einen Stammumfang von 4m.
+        </li>
+        <li>
+          Die Bäume sind mindestens 122 Jahre alt (Quelle:
+          <a
+            href="https://map.geo.admin.ch/?lang=de&topic=ech&bgLayer=ch.swisstopo.pixelkarte-farbe&layers=ch.swisstopo.zeitreihen,ch.bfs.gebaeude_wohnungs_register,ch.bav.haltestellen-oev,ch.swisstopo.swisstlm3d-wanderwege&layers_opacity=0.85,1,1,0.8&layers_visibility=true,false,false,false&layers_timestamp=18991231,,,&E=2580956.77&N=1187647.31&zoom=10"
+            target="_blank"
+            >map.geo.admin</a
+          >).
+        </li>
+        <li>
+          Laut
+          <a href="https://www.baumportal.de/" target="_blank">baumportal.de</a>
+          ist eine Eiche mit 4m Stammumfang 315 Jahre alt.
+        </li>
+        <li>
+          Der Wert eines Baumes bestimmt sich durch viele Faktoren. Einige
+          davon: CO<sub>2</sub>-Umsatz, Biodiversitäts (<a
+            href="https://www.proquercus.org/willkommen/die-eiche/biodiversit%C3%A4t/"
+            target="_blank"
+            >Beispiele</a
+          >), Schattenwurf.
+        </li>
+        <li>
+          150 Bäume seien Ersatz genug für drei alte Eichen. Dieser Ersatz
+          betrachtet nur den Ersatz für den CO<sub>2</sub>-Umsatz. Ob die 150
+          Kleinst-Bäume jemald denselben CO<sub>2</sub>-Umsatz erzielen, ist zu
+          bezweifeln.
+        </li>
+        <li>
+          Zitat aus dem
+          <a href="https://www.waschbaer.ch/" target="_blank"
+            >Waschbär-Newsletter</a
+          >, der auf "Natural Capital Accounting" (<a
+            href="https://en.wikipedia.org/wiki/Natural_capital_accounting"
+            target="_blank"
+            >Wikipedia</a
+          >) hinweist: "Eine 100-jährige Buche hat demnach einen Wert von rund
+          271'000 Euro" (<a
+            href="/docs/Waschbaer Newsletter - Die Natur ist gratis.pdf"
+            target="_blank"
+            >Link zum gesamten Newsletter-Text</a
+          >).
+        </li>
+      </ul>
+    </div>
 
-<!-- Container (News Section) -->
-<div class="w3-content w3-container w3-padding-64" id="news">
-  <h3 class="w3-center">AKTUELLES</h3>
-  <p>Das erste Treffen bei den Eichen hat stattgefunden. </p>
-  <img src="./images/erstes_treffen.jpg" style="max-width: 90%">
-  <p>Dabei konnten wir einige neue Fakten zusammentragen:</p>
-  <ul>
-      <li>Bauzone 2 Brieglipark wurde einzoniert und abgesteckt.</li>
-      <li>Es kam zu Einsprachen von Bewohnern in Bauzone 1 betreffend Schattenwurf des neu abgesteckten Gebäudes in Bauzone 2.</li>
-      <li>Daraufhin wurde entschieden die Krete, worauf die drei Bäume stehen, abzutragen. Dadurch ist das Gebäude in Bauzone 2 weniger hoch und wirft weniger Schatten.</li>
-      <li>Durch das Abtragen der Krete ist das Überleben der Bäume nicht gegeben.</li>
-      <li>Bäume mit einem Stammumfang bis zu 1.5m können versetzt werden (Quelle: <a href="http://www.baumboerse.ch/grossbaumverpflanzung" target="_blank">Baumbörse</a>).</li>
-      <li>Die zwei grossen Bäume haben auf 1.5m Höhe einen Stammumfang von 4m.</li>
-      <li>Die Bäume sind mindestens 122 Jahre alt (Quelle: <a href="https://map.geo.admin.ch/?lang=de&topic=ech&bgLayer=ch.swisstopo.pixelkarte-farbe&layers=ch.swisstopo.zeitreihen,ch.bfs.gebaeude_wohnungs_register,ch.bav.haltestellen-oev,ch.swisstopo.swisstlm3d-wanderwege&layers_opacity=0.85,1,1,0.8&layers_visibility=true,false,false,false&layers_timestamp=18991231,,,&E=2580956.77&N=1187647.31&zoom=10" target="_blank">map.geo.admin</a>).</li>
-      <li>Laut <a href="https://www.baumportal.de/" target="_blank">baumportal.de</a> ist eine Eiche mit 4m Stammumfang 315 Jahre alt.</li>
-      <li>Der Wert eines Baumes bestimmt sich durch viele Faktoren. Einige davon: CO<sub>2</sub>-Umsatz, Biodiversitäts (<a href="https://www.proquercus.org/willkommen/die-eiche/biodiversit%C3%A4t/" target="_blank">Beispiele</a>), Schattenwurf.</li>
-      <li>150 Bäume seien Ersatz genug für drei alte Eichen. Dieser Ersatz betrachtet nur den Ersatz für den CO<sub>2</sub>-Umsatz. Ob die 150 Kleinst-Bäume jemald denselben CO<sub>2</sub>-Umsatz erzielen, ist zu bezweifeln.</li>
-      <li>Zitat aus dem <a href="https://www.waschbaer.ch/" target="_blank">Waschbär-Newsletter</a>, der auf "Natural Capital Accounting" (<a href="https://en.wikipedia.org/wiki/Natural_capital_accounting" target="_blank">Wikipedia</a>) hinweist: "Eine 100-jährige Buche hat demnach einen Wert von rund 271'000 Euro" (<a href="/docs/Waschbaer Newsletter - Die Natur ist gratis.pdf" target="_blank">Link zum gesamten Newsletter-Text</a>).</li>
-  </ul>
-</div>
+    <div class="w3-content w3-container w3-padding-64" id="details">
+      <h3 class="w3-center">Alte Eichen retten – Worum geht’s?</h3>
+      <p>
+        Auf der grossen Wiese, auf der die Überbauung «Brieglipark» entsteht,
+        stehen mehrere alte Bäume, darunter drei wohl weit über 100-jährige,
+        kerngesunde, mächtige Eichen. Diese Eichen sind Teil des Inventars der
+        Landschaftsobjekte unserer Gemeinde (Nr. 274/2007) und damit –
+        grundsätzlich – geschützt.
+      </p>
+      <p>Das folgende Bild zeigt die entsprechende Seite im Inventar:</p>
+      <img
+        src="./images/inventar.png"
+        class="w3-round w3-image"
+        alt="Bauminventar"
+        width="500"
+        height="333"
+      />
+      <p>
+        Die Briegli Park AG hat begonnen, auf dieser Wiese 13 Wohnblocks zu
+        bauen. Zurzeit sind 8 Blocks fertiggestellt oder im Bau, fünf weitere
+        sind noch geplant. Der Detailbebauungsplan wurde bereits 2013
+        publiziert. Mehrere Anwohner erhoben schon damals Einsprache , u.a. um
+        die Bäume zu schützen. Alle Einsprachen wurden abgelehnt und der
+        Detailbebauungsplan von der Gemeinde gutgeheissen.
+      </p>
+      <p>
+        Durch die Etappierung der Überbauung musste das Fällen der geschützten
+        Bäume im Frühjahr 2021 mit dem jüngsten Baugesuch nochmals beantragt
+        werden.
+      </p>
+      <p>Jetzt wird es konkret: Die Eichen sollen gefällt werden.</p>
+      <p>Hier stehen die Eichen (Ausschnitt aus dem Zonenplan der Gemeinde Düdingen):</p>
+      <img
+        src="./images/plan1.png"
+        class="w3-round w3-image"
+        alt="Bauminventar"
+        width="500"
+        height="333"
+      />
+      <p>So soll gebaut werden (Grundbuchamt des Sensebezirks. Die Eichen «bedrohen» das Gebäude 7495):</p>
+      <img
+        src="./images/plan2.png"
+        class="w3-round w3-image"
+        alt="Bauminventar"
+        width="500"
+        height="333"
+      />
+      <p>
+        Die Eichen müssen offenbar gefällt werden, weil sie auf einem leichten
+        Geländevorsprung stehen, der abgetragen werden soll. Mit anderen Worten:
+        Weil die Bewohner im Wohnblock nordöstlich der Eichen zu wenig
+        Tageslicht erhalten, sollen die Eichen gefällt werden.
+      </p>
+      <p>
+        Ein weiteres Argument der Bauherrschaft lautet: Das Gebäude, das den
+        drei Eichen am nächsten zu stehen kommen soll, soll eine unterirdische
+        Autoeinstellhalle erhalten. Dadurch soll der Untergrund instabil werden,
+        die Eichen müssen weichen.
+      </p>
+      <p>
+        Es ist leicht erkennbar, dass die Eichen durch eine etwas weitsichtigere
+        Planung in die Überbauung hätten integriert werden können!
+      </p>
 
-<!-- Container (About Section) -->
-<div class="w3-content w3-container w3-padding-64" id="about">
-  <h3 class="w3-center">ES TUT UNS WEH WENN ALTE BÄUME GEHEN MÜSSEN</h3>
-  <embed src="./docs/eichendetails.pdf" type="application/pdf" width="100%" height="600px" />
-  <p>Die alten Eichen im Brieglipark, Düdingen sollen gefällt werden. Der Grund: Das Baugesuch wird angepasst, was den Bäumen das "Überleben nicht mehr garantiert".</p>
-  <p>Die Fakten:</p>
-  <ul>
-      <li>Die alten Eichen werden auf ein Alter von 80 Jahren geschätzt.</li>
-      <li>Düdingen hat den Klimanotstand ausgesprochen (Quelle: <a href="https://www.freiburger-nachrichten.ch/sieben-gemeinderate-fur-dudingen/" target="_blank">Freiburger Nachrichten</a>).</li>
-      <li>Die Bäume sind im Schutzregister aufgenommen.</li>
-      <li>150 Bäume sollen als Ersatz gepflanzt werden.</li>
-      <li>Bei Klimaschutz geht es nicht darum zu ersetzen, sondern zu verbessern. Die Eichen sollen bleiben - die 150 Bäume sollen trotzdem gepflanzt werden.</li>
-  </ul>
-  <p>Unser erstes Ziel ist es, so viele Bürger wie möglich zu mobilisieren, die die Bäume retten möchten. Danach werden wir uns bei den Eichen treffen und über mögliches weiteres Vorgehen beraten. Wir hoffen sehr, Dich für unsere Aktion begeistern zu können.</p>
+      <h3 class="w3-center">Was ist der aktuelle Stand? (3. Mai 2021)</h3>
+      <p>
+        Gegen die Baubewilligung sind ungefähr 10 Einsprachen eingegangen. Die
+        Gemeinde hat die Einsprachen ans Kantonale Bau- und Raumplanungsamt
+        weitergeleitet, wo das Baugesuch zurzeit liegt.
+      </p>
+      <p>
+        Am 17. April hat bei den Eichen eine Ortsbegehung stattgefunden und die
+        Interessensgemeinschaft «Alte Eichen retten» hat sich gebildet.
+      </p>
+      <p>
+        Die IG hat im Anschluss an das Treffen einen Brief ans Bau- und
+        Raumplanungsamt des Kantons Freiburg verfasst. Darin bitten wir um ein
+        Gespräch.
+      </p>
+      <p>
+        In den «Freiburger Nachrichten» sind bereits mehrere Leserbriefe
+        veröffentlicht worden.
+      </p>
 
-  <h3 class="w3-center">HIER STEHEN DIE BÄUME</h3>
-  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1648.8896000851007!2d7.189106079000513!3d46.83981999688409!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDbCsDUwJzIzLjQiTiA3wrAxMScyMy44IkU!5e1!3m2!1sen!2sch!4v1617866111263!5m2!1sen!2sch" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-</div>
-<!--
+      <h3 class="w3-center">Wie alt sind die Eichen?</h3>
+      <p>Karte von 2021</p>
+      <img
+        src="./images/plan3.png"
+        class="w3-round w3-image"
+        alt="Bauminventar"
+        width="500"
+        height="333"
+      />
+      <p>Karte von 1899 - Die Baumreihe ist klar erkennbar.</p>
+      <img
+        src="./images/plan4.png"
+        class="w3-round w3-image"
+        alt="Bauminventar"
+        width="500"
+        height="333"
+      />
+      <p>
+        Aufgrund dieses Kartenausschnitts schätzen wir das Alter der Eichen auf
+        klar über 120 Jahre. Die Bäume könnten aber auch noch viel älter sein.
+        Die Seite «Baumportal.de» berechnet für eine Eiche mit 400 cm
+        Stammumfang ein Alter von 315 Jahren!
+      </p>
+
+      <h3 class="w3-center">
+        Wir setzen uns ein für den Erhalt dieser Bäume. Warum?
+      </h3>
+      <p>
+        Wir glauben, dass mit der Fällung dieser gesunden Bäume ein grosser
+        Schaden entsteht, sowohl für die Natur als auch für die Bewohner unseres
+        Dorfes.
+      </p>
+      <p>
+        Die Auswirkungen der menschenverursachten Klimaerwärmung zeichnen sich
+        immer klarer ab, weltweit, aber auch bei uns zu Hause: Heissere,
+        trockenere Sommer. Gleichzeitig werden durch die Bautätigkeit die
+        Oberflächen zunehmend versiegelt, so dass sich die Böden leichter
+        aufheizen. Ein Teufelskreis. 2019 hat der Düdinger Generalrat eine
+        Resolution der Jungen Liste Düdingen verabschiedet, die die Ausrufung
+        des Klimanotstands fordert. Zentrale Forderung: «Der Gemeinde- und der
+        Generalrat sollen künftig bei jeglichen Geschäften die Auswirkungen auf
+        das Klima prüfen (Quelle: <a href="https://www.freiburger-nachrichten.ch/sieben-gemeinderate-fur-dudingen/" target="_blank">Freiburger Nachrichten</a>).»  Die Eichen haben einen Stammumfang von über vier
+        Metern und haben ein mächtiges Blätterdach. Sie bieten einen wirksamen
+        Schutz vor Hitze und sorgen mit ihrem Wurzelwerk dafür, dass der Boden
+        nicht austrocknet. Es ist unverständlich, dass die Gemeinde der Briegli
+        Park AG eine Abholzungsbewilligung erteilen will.
+      </p>
+      <p>
+        Die von der Briegli Park AG versprochene Ersatzpflanzung ist völlig
+        ungenügend, wie diese Gegenüberstellung zeigt:
+      </p>
+      <p>
+        Ersatzpflanzung im Brieglipark: Pflegeleichte Betonlandschaft - Wie soll hier ein gesunder Baum wachsen?
+      </p>
+      <img
+        src="./images/fotoBriegli.jpg"
+        class="w3-round w3-image"
+        alt="Bauminventar"
+        width="500"
+        height="333"
+      />
+      <p>
+        Fast doppelt so hoch wie der geplante Wohnblock: Zwei der drei gesunden Eichen, die gefällt werden sollen.
+      </p>
+      <img
+        src="./images/fotoBriegli2.jpg"
+        class="w3-round w3-image"
+        alt="Bauminventar"
+        width="500"
+        height="333"
+      />
+      <p>
+        Im Laufe des Winters wurden in den Wäldern des Sensebezirks viele Buchen
+        gefällt. Die Behörden argumentierten, dass die Buchen wegen der
+        wasserarmen Sommer ausgetrocknet seien und aus Sicherheitsgründen
+        gefällt werden müssten (Quelle: Mitteilungsblatt Dezember 2020: Sicherheitsfällungen im Sagerainwald). In diesem Kontext wurde wiederholt eine Baumart
+        als besonders widerstandsfähig gegen die Folgen der Klimaerwärmung
+        hervorgehoben: die Eiche.
+      </p>
+      <p>
+        Es ist völlig absurd, dass der Düdinger Gemeinderat die Abholzung dieser
+        Bäume zulassen will.
+      </p>
+
+      <h3 class="w3-center">Wer profitiert?</h3>
+      <p>
+        Gegen verdichtetes Bauen in Düdingen ist nichts einzuwenden. Aber es
+        muss erwartet werden können, dass eine Bauherrschaft die
+        landschaftlichen Gegebenheiten respektiert. Wir fordern, dass der
+        Gemeinderat umdenkt: Nicht die Bäume stehen den Bauplänen im Weg,
+        sondern die Baupläne diesen gesunden Bäumen. Warum kann man nicht
+        verlangen, dass diese für die Gemeinde wichtigen Landschaftsobjekte in
+        die Siedlung integriert werden?
+      </p>
+      <p>
+        Letztlich geht es auf der Briegliwiese um Gewinnmaximierung. Bei der
+        Ausnutzung des Geländes will die Briegli Park AG auf die geschützten
+        Bäume keine Rücksicht nehmen. Das ist aber gesetzlich verlangt!
+      </p>
+      <p>
+        Das Gesetz über den Natur- und Landschaftsschutz (NatG) bezweckt u.a.,
+        die Vielfalt der Natur- und Landschaftsgüter zu bewahren und zu fördern.
+        Es steht:
+      </p>
+      <blockquote>
+        «Jede Person ist grundsätzlich verpflichtet – im privaten und
+        öffentlichen Rahmen – Rücksicht auf Natur und Landschaft zu nehmen (Quelle: Gesetz über den Natur- und Landschaftsschutz, Artikel 2).»
+      </blockquote>
+      <blockquote>
+        «Die Organe von Staat und Gemeinden berücksichtigen systematisch die
+        Interessen des Natur- und Landschaftsschutzes in ihren Tätigkeiten und
+        dies bereits bei der Planung und Ausarbeitung von Projekten (Quelle: Gesetz über den Natur- und Landschaftsschutz, Artikel 3).»
+      </blockquote>
+      <p>
+        Wir fragen uns: Wie konnte es geschehen, dass die zuständigen Behörden
+        den Detailbebauungsplan, der all diesen Grundsätzen klar widerspricht,
+        trotz Einsprachen bewilligten?
+      </p>
+      <p>Im Planungs- und Baureglement der Gemeinde steht ausdrücklich:</p>
+      <blockquote>«Der natürliche Geländeverlauf muss ablesbar bleiben (Quelle: PBR, Artikel 39, Absatz 4, Punkt 2)».</blockquote>
+      <p>
+        Wir fragen uns: Wie kommt es, dass das erhöhte Landschaftselement mit
+        den geschützten Bäumen abgetragen werden darf?
+      </p>
+      <blockquote>
+        «Die Gestaltung des Aussenraums hat unter Berücksichtigung ökologischer
+        Kriterien zu erfolgen (Quelle: PBR, Artikel 39, Absatz 4, Punkt 5).»
+      </blockquote>
+      <p>
+        Wir fragen uns: Was stellt sich der Gemeinderat unter ökologischen
+        Kriterien genau vor?
+      </p>
+      <h3 class="w3-center">Kann man denn gar nichts mehr tun?</h3>
+      <p>
+        Doch. Die Interessensgemeinschaft «Alte Eichen retten» sucht das
+        Gespräch mit dem Oberamtmann, der Gemeinde Düdingen und dem kantonalen
+        Bau- und Raumplanungsamt. Ob die Einsprachen weitergezogen werden, ist
+        noch unklar.
+      </p>
+      <p>
+        Wir fragen uns aber auch, wie die Gesetzgebung verändert werden müsste,
+        damit solche Abholzungen in Zukunft verhindert werden können.
+        Hoffentlich ist der neue Gemeinderat für solche Aktionen nicht mehr zu
+        haben.
+      </p>
+      <h3 class="w3-center">Was kannst du tun?</h3>
+      <p>
+        Diese Seite teilen. Dich für den Newsletter einschreiben. Einen
+        Leserbrief schreiben. Dich bei uns melden:
+        <a href="mailto:info@alteeichenretten.org">info@alteeichenretten.org</a>
+      </p>
+    </div>
+    <!-- Container (About Section) -->
+    <!--
+    <div class="w3-content w3-container w3-padding-64" id="about">
+      <h3 class="w3-center">ES TUT UNS WEH WENN ALTE BÄUME GEHEN MÜSSEN</h3>
+      <p>
+        Die alten Eichen im Brieglipark, Düdingen sollen gefällt werden. Der
+        Grund: Das Baugesuch wird angepasst, was den Bäumen das "Überleben nicht
+        mehr garantiert".
+      </p>
+      <p>Die Fakten:</p>
+      <ul>
+        <li>Die alten Eichen werden auf ein Alter von 80 Jahren geschätzt.</li>
+        <li>
+          Düdingen hat den Klimanotstand ausgesprochen (Quelle:
+          <a
+            href="https://www.freiburger-nachrichten.ch/sieben-gemeinderate-fur-dudingen/"
+            target="_blank"
+            >Freiburger Nachrichten</a
+          >).
+        </li>
+        <li>Die Bäume sind im Schutzregister aufgenommen.</li>
+        <li>150 Bäume sollen als Ersatz gepflanzt werden.</li>
+        <li>
+          Bei Klimaschutz geht es nicht darum zu ersetzen, sondern zu
+          verbessern. Die Eichen sollen bleiben - die 150 Bäume sollen trotzdem
+          gepflanzt werden.
+        </li>
+      </ul>
+      <p>
+        Unser erstes Ziel ist es, so viele Bürger wie möglich zu mobilisieren,
+        die die Bäume retten möchten. Danach werden wir uns bei den Eichen
+        treffen und über mögliches weiteres Vorgehen beraten. Wir hoffen sehr,
+        Dich für unsere Aktion begeistern zu können.
+      </p>
+-->
+<div class="w3-content w3-container w3-padding-64" id="karte">
+      <h3 class="w3-center">HIER STEHEN DIE BÄUME</h3>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1648.8896000851007!2d7.189106079000513!3d46.83981999688409!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDbCsDUwJzIzLjQiTiA3wrAxMScyMy44IkU!5e1!3m2!1sen!2sch!4v1617866111263!5m2!1sen!2sch"
+        width="100%"
+        height="450"
+        style="border: 0"
+        allowfullscreen=""
+        loading="lazy"
+      ></iframe>
+    </div>
+    <!--
 <div class="w3-row w3-center w3-dark-grey w3-padding-16">
   <div class="w3-quarter w3-section">
     <span class="w3-xlarge">14+</span><br>
@@ -141,35 +522,79 @@ body, html {
 </div>
 -->
 
-<!-- Container (Contact Section) -->
-<div class="w3-content w3-container w3-padding-64" id="contact">
-    <h3 class="w3-center">MELDE DICH HIER ZUM NEWSLETTER AN</h3>
-    <p class="w3-center"><em>Der Umwelt zuliebe</em></p>
-    <!-- Begin Mailchimp Signup Form -->
-    <link href="//cdn-images.mailchimp.com/embedcode/slim-10_7.css" rel="stylesheet" type="text/css">
-    <style type="text/css">
-        #mc_embed_signup{background:#fff; clear:left; width:100%;}
+    <!-- Container (Contact Section) -->
+    <div class="w3-content w3-container w3-padding-64" id="contact">
+      <h3 class="w3-center">MELDE DICH HIER ZUM NEWSLETTER AN</h3>
+      <p class="w3-center"><em>Der Umwelt zuliebe</em></p>
+      <!-- Begin Mailchimp Signup Form -->
+      <link
+        href="//cdn-images.mailchimp.com/embedcode/slim-10_7.css"
+        rel="stylesheet"
+        type="text/css"
+      />
+      <style type="text/css">
+        #mc_embed_signup {
+          background: #fff;
+          clear: left;
+          width: 100%;
+        }
         /* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
         We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
-    </style>
-    <div id="mc_embed_signup" class="w3-center">
-    <form action="https://alteeichenretten.us1.list-manage.com/subscribe/post?u=bb36db445d5699e4460e890f7&amp;id=310ec4fa48" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-        <div id="mc_embed_signup_scroll">
-        <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="E-Mail Adresse" required>
-        <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-        <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_bb36db445d5699e4460e890f7_310ec4fa48" tabindex="-1" value=""></div>
-        <div class="clear"><input type="submit" style="margin-top:10px;" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="w3-button w3-light-grey"></div>
-        </div>
-    </form>
+      </style>
+      <div id="mc_embed_signup" class="w3-center">
+        <form
+          action="https://alteeichenretten.us1.list-manage.com/subscribe/post?u=bb36db445d5699e4460e890f7&amp;id=310ec4fa48"
+          method="post"
+          id="mc-embedded-subscribe-form"
+          name="mc-embedded-subscribe-form"
+          class="validate"
+          target="_blank"
+          novalidate
+        >
+          <div id="mc_embed_signup_scroll">
+            <input
+              type="email"
+              value=""
+              name="EMAIL"
+              class="email"
+              id="mce-EMAIL"
+              placeholder="E-Mail Adresse"
+              required
+            />
+            <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+            <div style="position: absolute; left: -5000px" aria-hidden="true">
+              <input
+                type="text"
+                name="b_bb36db445d5699e4460e890f7_310ec4fa48"
+                tabindex="-1"
+                value=""
+              />
+            </div>
+            <div class="clear">
+              <input
+                type="submit"
+                style="margin-top: 10px"
+                value="Subscribe"
+                name="subscribe"
+                id="mc-embedded-subscribe"
+                class="w3-button w3-light-grey"
+              />
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <!--End mc_embed_signup-->
     </div>
 
-<!--End mc_embed_signup-->
-</div>
-
-<!-- Footer -->
-<footer class="w3-center w3-black w3-padding-64 w3-opacity w3-hover-opacity-off">
-  <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
-<!--  <div class="w3-xlarge w3-section">
+    <!-- Footer -->
+    <footer
+      class="w3-center w3-black w3-padding-64 w3-opacity w3-hover-opacity-off"
+    >
+      <a href="#home" class="w3-button w3-light-grey"
+        ><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a
+      >
+      <!--  <div class="w3-xlarge w3-section">
     <i class="fa fa-facebook-official w3-hover-opacity"></i>
     <i class="fa fa-instagram w3-hover-opacity"></i>
     <i class="fa fa-snapchat w3-hover-opacity"></i>
@@ -177,42 +602,62 @@ body, html {
     <i class="fa fa-twitter w3-hover-opacity"></i>
     <i class="fa fa-linkedin w3-hover-opacity"></i>
   </div>-->
-    <div class="w3-xlarge w3-section">
-        <p>Impressum: Interessengemeinschaft „alteeichenretten“ + Ortsgruppe Grüne Düdingen</p>
-    </div>
-  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
-</footer>
- 
-<script>
-// Modal Image Gallery
-function onClick(element) {
-  document.getElementById("img01").src = element.src;
-  document.getElementById("modal01").style.display = "block";
-  var captionText = document.getElementById("caption");
-  captionText.innerHTML = element.alt;
-}
+      <div class="w3-xlarge w3-section">
+        <p>
+          Impressum: Interessengemeinschaft „alteeichenretten“ + Ortsgruppe
+          Grüne Düdingen
+        </p>
+      </div>
+      <p>
+        Powered by
+        <a
+          href="https://www.w3schools.com/w3css/default.asp"
+          title="W3.CSS"
+          target="_blank"
+          class="w3-hover-text-green"
+          >w3.css</a
+        >
+      </p>
+    </footer>
 
-// Change style of navbar on scroll
-window.onscroll = function() {myFunction()};
-function myFunction() {
-    var navbar = document.getElementById("myNavbar");
-    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-        navbar.className = "w3-bar" + " w3-card" + " w3-animate-top" + " w3-white";
-    } else {
-        navbar.className = navbar.className.replace(" w3-card w3-animate-top w3-white", "");
-    }
-}
+    <script>
+      // Modal Image Gallery
+      function onClick(element) {
+        document.getElementById("img01").src = element.src;
+        document.getElementById("modal01").style.display = "block";
+        var captionText = document.getElementById("caption");
+        captionText.innerHTML = element.alt;
+      }
 
-// Used to toggle the menu on small screens when clicking on the menu button
-function toggleFunction() {
-    var x = document.getElementById("navDemo");
-    if (x.className.indexOf("w3-show") == -1) {
-        x.className += " w3-show";
-    } else {
-        x.className = x.className.replace(" w3-show", "");
-    }
-}
-</script>
+      // Change style of navbar on scroll
+      window.onscroll = function () {
+        myFunction();
+      };
+      function myFunction() {
+        var navbar = document.getElementById("myNavbar");
+        if (
+          document.body.scrollTop > 100 ||
+          document.documentElement.scrollTop > 100
+        ) {
+          navbar.className =
+            "w3-bar" + " w3-card" + " w3-animate-top" + " w3-white";
+        } else {
+          navbar.className = navbar.className.replace(
+            " w3-card w3-animate-top w3-white",
+            ""
+          );
+        }
+      }
 
-</body>
+      // Used to toggle the menu on small screens when clicking on the menu button
+      function toggleFunction() {
+        var x = document.getElementById("navDemo");
+        if (x.className.indexOf("w3-show") == -1) {
+          x.className += " w3-show";
+        } else {
+          x.className = x.className.replace(" w3-show", "");
+        }
+      }
+    </script>
+  </body>
 </html>
